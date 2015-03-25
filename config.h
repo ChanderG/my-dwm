@@ -53,6 +53,7 @@ static const char *gpcmd[]  = { "gnome-panel", NULL };
 //not working : abandoned for now
 //static const char *nmappletcmd[]  = { "nm-applet", NULL };
 static const char *ffcmd[]  = { "firefox", NULL };
+static const char *sleepcmd[]  = { "dwm-sleep.sh", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -60,6 +61,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
         { MODKEY,                       XK_g,      spawn,          {.v = gpcmd } },
         { MODKEY|ShiftMask,             XK_f,      spawn,          {.v = ffcmd } },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = sleepcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
