@@ -69,6 +69,11 @@ Also, when you wake the computer from sleep, the screen is shown for a couple of
 * Both the above depends on getting the X key code for the respective keys.
 * Getter a better solution to the sleeplock hack.
 * In general organize keybindings for applications vs dwm-related stuff.
+* Use xterm + tabbed as follows:
+```
+tabbed -c xterm intro 
+```
+Modify dwm keybindings, tabbed key bindings to shadow gnome-defaults.
 
 ###See also
 My original [source](http://holymonkey.com/dwm-with-gnome-guide.html) of the gnome-panel idea.
