@@ -62,6 +62,10 @@ Add an entry as given in the linked article or google. In the command alias sect
 
 Also, when you wake the computer from sleep, the screen is shown for a couple of seconds after which the slock kicks in. Also if you are using slock, there is no prompt for a password. It is just a black screen that turn blue as you start typing your password.
 
+### Alternate terminal
+
+Adds easy keybindings for xterm. Note that xterm has not concepts of tabs (like in gnome-terminal) so I bound it with tabbed , another suckless product that provides tabbing feature to X based applications.
+
 ###Wishlist or TODO
 
 * Remap terminal to some easy key (say Windows/Command).
@@ -69,11 +73,7 @@ Also, when you wake the computer from sleep, the screen is shown for a couple of
 * Both the above depends on getting the X key code for the respective keys.
 * Getter a better solution to the sleeplock hack.
 * In general organize keybindings for applications vs dwm-related stuff.
-* Use xterm + tabbed as follows:
-```
-tabbed -c xterm intro 
-```
-Modify dwm keybindings, tabbed key bindings to shadow gnome-defaults.
+* Modify xterm-tabbed key bindings to shadow gnome-defaults.
 
 ###See also
 My original [source](http://holymonkey.com/dwm-with-gnome-guide.html) of the gnome-panel idea.

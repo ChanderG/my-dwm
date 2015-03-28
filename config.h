@@ -54,11 +54,14 @@ static const char *gpcmd[]  = { "gnome-panel", NULL };
 //static const char *nmappletcmd[]  = { "nm-applet", NULL };
 static const char *ffcmd[]  = { "firefox", NULL };
 static const char *sleepcmd[]  = { "dwm-sleep.sh", NULL };
+//xterm with tabbed (from suckless)
+static const char *termcmd2[]  = { "tabbed", "-c", "xterm", "-into", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = termcmd2 } },
         { MODKEY,                       XK_g,      spawn,          {.v = gpcmd } },
         { MODKEY|ShiftMask,             XK_f,      spawn,          {.v = ffcmd } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = sleepcmd } },
