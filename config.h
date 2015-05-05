@@ -20,6 +20,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 0,       False,       -1 },
+	{ "Konqueror",  NULL,       NULL,       1 << 0,       False,       -1 },
 	{ "Gnome-panel",  NULL,       NULL,       1 << 0,       True,       -1 },
 };
 
@@ -57,13 +58,21 @@ static const char *sleepcmd[]  = { "dwm-sleep.sh", NULL };
 //xterm with tabbed (from suckless)
 static const char *termcmd2[]  = { "tabbed", "-c", "xterm", "-into", NULL };
 
+//on moving to KDE
+static const char *krcmd[]  = { "konqueror", NULL };
+static const char *ktermcmd[]  = { "konsole", NULL };
+
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	// note that konsole and gnome-terminal are mapped to the same key
+	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = ktermcmd } },
+	// and this is xterm
 	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = termcmd2 } },
         { MODKEY,                       XK_g,      spawn,          {.v = gpcmd } },
         { MODKEY|ShiftMask,             XK_f,      spawn,          {.v = ffcmd } },
+        { MODKEY|ShiftMask,             XK_k,      spawn,          {.v = krcmd } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = sleepcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
