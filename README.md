@@ -62,9 +62,19 @@ Add an entry as given in the linked article or google. In the command alias sect
 
 Also, when you wake the computer from sleep, the screen is shown for a couple of seconds after which the slock kicks in. Also if you are using slock, there is no prompt for a password. It is just a black screen that turn blue as you start typing your password.
 
-### Alternate terminal
+### Terminal(s)
+
+So terminals are something I need aplenty.
+
+Current keybindings:
+
+Alt + Shift + <Enter>   -- gnome-terminal / konsole
+Alt + Shift + t         -- xterm under tabbed
+Alt + Shift + x         -- xfce4-terminal
 
 Adds easy keybindings for xterm. Note that xterm has not concepts of tabs (like in gnome-terminal) so I bound it with tabbed , another suckless product that provides tabbing feature to X based applications.
+
+Though the above feature exists, I have moved to using tmux more often than not, so I am not really using this anymore.
 
 ###Wishlist or TODO
 

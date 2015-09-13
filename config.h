@@ -62,6 +62,9 @@ static const char *termcmd2[]  = { "tabbed", "-c", "xterm", "-into", NULL };
 static const char *krcmd[]  = { "konqueror", NULL };
 static const char *ktermcmd[]  = { "konsole", NULL };
 
+//for XFCE4 based light and fast tools
+static const char *xfcetermcmd[]  = { "xfce4-terminal", NULL };
+
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
@@ -70,6 +73,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = ktermcmd } },
 	// and this is xterm
 	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = termcmd2 } },
+	// and this is xfce4-terminal
+	{ MODKEY|ShiftMask,             XK_x,      spawn,          {.v = xfcetermcmd } },
         { MODKEY,                       XK_g,      spawn,          {.v = gpcmd } },
         { MODKEY|ShiftMask,             XK_f,      spawn,          {.v = ffcmd } },
         { MODKEY|ShiftMask,             XK_k,      spawn,          {.v = krcmd } },
