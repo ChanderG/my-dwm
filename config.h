@@ -49,36 +49,48 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+
+// misc
+static const char *ffcmd[]  = { "firefox", NULL };
+
+// gnome specific commands
 static const char *termcmd[]  = { "gnome-terminal", NULL };
 static const char *gpcmd[]  = { "gnome-panel", NULL };
-//not working : abandoned for now
-//static const char *nmappletcmd[]  = { "nm-applet", NULL };
-static const char *ffcmd[]  = { "firefox", NULL };
-static const char *sleepcmd[]  = { "dwm-sleep.sh", NULL };
+
+// dwm specific tools
 //xterm with tabbed (from suckless)
 static const char *termcmd2[]  = { "tabbed", "-c", "xterm", "-into", NULL };
+//custom sleep
+static const char *sleepcmd[]  = { "dwm-sleep.sh", NULL };
 
-//on moving to KDE
+// on moving to KDE
 static const char *krcmd[]  = { "konqueror", NULL };
 static const char *ktermcmd[]  = { "konsole", NULL };
 
-//for XFCE4 based light and fast tools
+// for XFCE4 based items
 static const char *xfcetermcmd[]  = { "xfce4-terminal", NULL };
 
+// not working : abandoned for now
+//static const char *nmappletcmd[]  = { "nm-applet", NULL };
+
+// note that konsole and gnome-terminal are mapped to the same key
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	// note that konsole and gnome-terminal are mapped to the same key
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = ktermcmd } },
-	// and this is xterm
-	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = termcmd2 } },
-	// and this is xfce4-terminal
-	{ MODKEY|ShiftMask,             XK_x,      spawn,          {.v = xfcetermcmd } },
-        { MODKEY,                       XK_g,      spawn,          {.v = gpcmd } },
+	//misc
         { MODKEY|ShiftMask,             XK_f,      spawn,          {.v = ffcmd } },
-        { MODKEY|ShiftMask,             XK_k,      spawn,          {.v = krcmd } },
+	//gnome specific
+	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+        { MODKEY,                       XK_g,      spawn,          {.v = gpcmd } },
+	//dwm specific
+	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = termcmd2 } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = sleepcmd } },
+	//kde specific
+        { MODKEY|ShiftMask,             XK_k,      spawn,          {.v = krcmd } },
+	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = ktermcmd } },
+	//xfce4 specific
+	{ MODKEY|ShiftMask,             XK_x,      spawn,          {.v = xfcetermcmd } },
+	//others
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
