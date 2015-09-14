@@ -52,6 +52,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, 
 
 // misc
 static const char *ffcmd[]  = { "firefox", NULL };
+static const char *utermcmd[]  = { "urxvt", NULL };
 
 // gnome specific commands
 static const char *termcmd[]  = { "gnome-terminal", NULL };
@@ -79,6 +80,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	//misc
         { MODKEY|ShiftMask,             XK_f,      spawn,          {.v = ffcmd } },
+        { MODKEY|ShiftMask,             XK_u,      spawn,          {.v = utermcmd } },
 	//gnome specific
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
         { MODKEY,                       XK_g,      spawn,          {.v = gpcmd } },

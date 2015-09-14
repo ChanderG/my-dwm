@@ -71,6 +71,7 @@ Current keybindings:
 Alt + Shift + <Enter>   -- gnome-terminal / konsole
 Alt + Shift + t         -- xterm under tabbed
 Alt + Shift + x         -- xfce4-terminal
+Alt + Shift + u         -- urxvt 
 
 Adds easy keybindings for xterm. Note that xterm has not concepts of tabs (like in gnome-terminal) so I bound it with tabbed , another suckless product that provides tabbing feature to X based applications.
 
