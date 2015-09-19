@@ -77,6 +77,8 @@ Adds easy keybindings for xterm. Note that xterm has not concepts of tabs (like 
 
 Though the above feature exists, I have moved to using tmux more often than not, so I am not really using this anymore.
 
+Terminals had a problem of empty spaces around them. This has now been solved.
+
 ###Wishlist or TODO
 
 * Remap terminal to some easy key (say Windows/Command).
