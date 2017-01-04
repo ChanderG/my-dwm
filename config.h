@@ -20,8 +20,6 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 0,       False,       -1 },
-	{ "Konqueror",  NULL,       NULL,       1 << 0,       False,       -1 },
-	{ "Gnome-panel",  NULL,       NULL,       1 << 0,       True,       -1 },
 };
 
 /* layout(s) */
@@ -53,27 +51,10 @@ static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, 
 
 // misc
 static const char *ffcmd[]  = { "firefox", NULL };
-static const char *utermcmd[]  = { "urxvt", NULL };
+static const char *termcmd[]  = { "urxvt", NULL };
 
-// gnome specific commands
-static const char *termcmd[]  = { "gnome-terminal", NULL };
-static const char *gpcmd[]  = { "gnome-panel", NULL };
-
-// dwm specific tools
-//xterm with tabbed (from suckless)
-static const char *termcmd2[]  = { "tabbed", "-c", "xterm", "-into", NULL };
-//custom sleep
-static const char *sleepcmd[]  = { "dwm-sleep.sh", NULL };
-
-// on moving to KDE
-static const char *krcmd[]  = { "konqueror", NULL };
-static const char *ktermcmd[]  = { "konsole", NULL };
-
-// for XFCE4 based items
-static const char *xfcetermcmd[]  = { "xfce4-terminal", NULL };
-
-// not working : abandoned for now
-//static const char *nmappletcmd[]  = { "nm-applet", NULL };
+// dropdown terminal with tmux - https://github.com/noctuid/tdrop
+static const char *termdropcmd[]  = { "tdrop", "-a", "-s", "dropdown", "urxvt", NULL };
 
 // note that konsole and gnome-terminal are mapped to the same key
 static Key keys[] = {
@@ -81,18 +62,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	//misc
         { MODKEY|ShiftMask,             XK_f,      spawn,          {.v = ffcmd } },
-        { MODKEY|ShiftMask,             XK_u,      spawn,          {.v = utermcmd } },
-	//gnome specific
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-        { MODKEY,                       XK_g,      spawn,          {.v = gpcmd } },
-	//dwm specific
-	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = termcmd2 } },
-	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = sleepcmd } },
-	//kde specific
-        { MODKEY|ShiftMask,             XK_k,      spawn,          {.v = krcmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = ktermcmd } },
-	//xfce4 specific
-	{ MODKEY|ShiftMask,             XK_x,      spawn,          {.v = xfcetermcmd } },
+        { MODKEY|ShiftMask,             XK_u,      spawn,          {.v = termcmd } },
+	// drop down terminal
+	{ MODKEY,             		XK_o,      spawn,          {.v = termdropcmd } },
 	//others
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
