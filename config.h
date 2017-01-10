@@ -17,6 +17,8 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
 static const unsigned int gappx = 6; /* gap pixel between windows */ 
+static unsigned int baralpha        = 0x00;
+static unsigned int borderalpha     = OPAQUE;
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };

@@ -49,10 +49,15 @@ Also using [xcape](https://github.com/alols/xcape) to overload modifiers. With t
 
 [Uselessgap](http://dwm.suckless.org/patches/uselessgap) is a dwm patch to insert gaps between windows in tiling mode alone. Currently included.
 
+###Top bar transparency
+
+Using [Alpha](http://dwm.suckless.org/patches/alpha) is a dwm patch to bring in transparency to the top bar. Be warned, this will not work without a separate compositing manager running. I use xcompmgr.
+
 ###List of Patches
 All included in the source. Listing here for future upgrade requirements.
 
 + uselessgap - http://dwm.suckless.org/patches/uselessgap
++ alpha - http://dwm.suckless.org/patches/alpha
 
 ###See also
 My original [source](http://holymonkey.com/dwm-with-gnome-guide.html) of the gnome-panel idea.
