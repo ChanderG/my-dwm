@@ -17,7 +17,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
 static const unsigned int gappx = 6; /* gap pixel between windows */ 
-static unsigned int baralpha        = 0x00;
+static unsigned int baralpha        = 0xBB;
 static unsigned int borderalpha     = OPAQUE;
 
 /* tagging */
@@ -63,7 +63,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 
 // urxvt
-static const char *utermcmd[]  = { "urxvt", NULL };
+static const char *utermcmd[]  = { "urxvtc", NULL };
 // firefox
 static const char *ffcmd[]  = { "firefox", NULL };
 // dropdown terminal with tmux - https://github.com/noctuid/tdrop

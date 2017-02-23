@@ -53,11 +53,16 @@ Also using [xcape](https://github.com/alols/xcape) to overload modifiers. With t
 
 Using [Alpha](http://dwm.suckless.org/patches/alpha) is a dwm patch to bring in transparency to the top bar. Be warned, this will not work without a separate compositing manager running. I use xcompmgr.
 
+###Per Tag
+
+Have separate layout per tag.
+
 ###List of Patches
 All included in the source. Listing here for future upgrade requirements.
 
 + uselessgap - http://dwm.suckless.org/patches/uselessgap
 + alpha - http://dwm.suckless.org/patches/alpha
++ pertag - http://dwm.suckless.org/patches/pertag
 
 ###See also
 My original [source](http://holymonkey.com/dwm-with-gnome-guide.html) of the gnome-panel idea.
