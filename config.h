@@ -79,6 +79,10 @@ static Key keys[] = {
         { MODKEY|ShiftMask,             XK_u,      spawn,          {.v = utermcmd } },
 	// drop down terminal
 	{ MODKEY,             		XK_o,      spawn,          {.v = termdropcmd } },
+	// move to adjacent tags
+	{ MODKEY,                       XK_Right,  view_adjacent,  { .i = +1 } },
+	{ MODKEY,                       XK_Left,   view_adjacent,  { .i = -1 } },
+	// end
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },

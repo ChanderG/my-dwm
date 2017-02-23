@@ -45,6 +45,10 @@ See [this](https://github.com/noctuid/tdrop) for an awesome terminal independent
 
 Also using [xcape](https://github.com/alols/xcape) to overload modifiers. With this setup and the above 2 points, I have awesome control on the system.
 
+Some exceptional things can be done with this. Some combos in my configuration now are:
+1. Use Right Alt and Ctrl to Inc/Dec tag. In combination with nextprevtag patch.
+2. Use Right Shift directly as Alt|Tab key combination. Once click tag switch.
+
 ###Gaps between windows
 
 [Uselessgap](http://dwm.suckless.org/patches/uselessgap) is a dwm patch to insert gaps between windows in tiling mode alone. Currently included.
@@ -63,6 +67,7 @@ All included in the source. Listing here for future upgrade requirements.
 + uselessgap - http://dwm.suckless.org/patches/uselessgap
 + alpha - http://dwm.suckless.org/patches/alpha
 + pertag - http://dwm.suckless.org/patches/pertag
++ nextprevtag - http://dwm.suckless.org/patches/nextprevtag
 
 ###See also
 My original [source](http://holymonkey.com/dwm-with-gnome-guide.html) of the gnome-panel idea.
