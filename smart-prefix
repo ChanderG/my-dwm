@@ -1,0 +1,12 @@
+#! /bin/bash
+
+WINNAME=$(xdotool getwindowfocus getwindowname)
+
+# requires specifc tmux title configuration
+if [[ $WINNAME =~ tmux.* ]]; then
+  # send tmux prefix sequence
+  xdotool key ctrl+b
+else
+  # open new urxvt window
+  xdotool key alt+shift+u
+fi

@@ -48,6 +48,18 @@ Also using [xcape](https://github.com/alols/xcape) to overload modifiers. With t
 Some exceptional things can be done with this. Some combos in my configuration now are:
 1. Use Right Alt and Ctrl to Inc/Dec tag. In combination with nextprevtag patch.
 2. Use Right Shift directly as Alt|Tab key combination. Once click tag switch.
+3. Left Ctrl for dropdown terminal.
+4. Left Shift for cycling through windows in current tag.
+
+###Smart Key(s)
+
+With xcape mentioned above, we can go far with shortcuts. However, we can go even further. We can create a context aware smart key. In my case, the Windows key, that is Super.
+
+Start with xcape and bind a free key to an unused dwm key combo. In dwm, map the combo to run a script of your choice. In my setup, look at the `smart-prefix` script. So, far we can run a script with a single command.
+
+Now, fill the script with commands that run based on the current active window. Simple matter of using xdotool to get the title and from there you can have a truly overloaded context aware key.
+
+In my setup, for instance, if the current window is a tmux session, the Super key performs the role of tmux prefix. Else, it opens a new urxvt terminal. Stands to reason that I don't really need a new urxvt terminal if I am using tmux currently. Still, the direct dwm key combination still works if needed.
 
 ###Gaps between windows
 

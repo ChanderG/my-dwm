@@ -68,6 +68,9 @@ static const char *utermcmd[]  = { "urxvtc", NULL };
 static const char *ffcmd[]  = { "firefox", NULL };
 // dropdown terminal with tmux - https://github.com/noctuid/tdrop
 static const char *termdropcmd[]  = { "tdrop", "-a", "-s", "dropdown", "urxvt", NULL };
+// context aware smart prefix
+static const char *spcmd[]  = { "smart-prefix", NULL };
+
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -77,6 +80,8 @@ static Key keys[] = {
         { MODKEY|ShiftMask,             XK_f,      spawn,          {.v = ffcmd } },
 	// urxvt
         { MODKEY|ShiftMask,             XK_u,      spawn,          {.v = utermcmd } },
+	// tmux prefix manager
+        { MODKEY|ShiftMask,             XK_s,      spawn,          {.v = spcmd } },
 	// drop down terminal
 	{ MODKEY,             		XK_o,      spawn,          {.v = termdropcmd } },
 	// move to adjacent tags
