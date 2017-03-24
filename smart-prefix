@@ -3,7 +3,11 @@
 WINNAME=$(xdotool getwindowfocus getwindowname)
 
 # requires specifc tmux title configuration
-if [[ $WINNAME =~ tmux.* ]]; then
+if [[ $WINNAME =~ emacs.* ]]; then
+  # toggle clockin-clockout
+  # depends on corresponding snippet in .emacs
+  xdotool key F5
+elif [[ $WINNAME =~ tmux.* ]]; then
   # send tmux prefix sequence
   xdotool key ctrl+b
 else
