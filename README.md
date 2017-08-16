@@ -39,23 +39,29 @@ Terminals had a problem of empty spaces around them. This has now been solved.
 
 ###Dropdown terminal
 
-See [this](https://github.com/noctuid/tdrop) for an awesome terminal independent drop down setup. I use it with urxvt + tmux, which gives me everything needed.
+See [this](https://github.com/noctuid/tdrop) for an awesome terminal independent drop down setup. I use it with urxvt + tmux, which gives me everything needed. The problem is that on dwm, you cannot easily achieve the full effect of a dropdown terminal with this setup. See the Word of Recall section below.
+
+###Word of Recall
+
+To achieve true power on windows, I tried taking a peek into tdrop mentioned above. Turns out that the secret sauce is windowunmap command of xdotool. Now you can summon and dismiss windows from the void in dwm too.
+
+For an example, look at the included wor-sp script, Word of Recall Scratchpad. This brings up or dismisses a terminal, the same terminal, floating near the bottom right corner of the screen every time it is run. The idea can be trivially replicated for any class or type of window or specfic instances.
 
 ###Modifiers as independent keys
 
-Also using [xcape](https://github.com/alols/xcape) to overload modifiers. With this setup and the above 2 points, I have awesome control on the system.
+Also using [xcape](https://github.com/alols/xcape) to overload modifiers.
 
 Some exceptional things can be done with this. Some combos in my configuration now are:
 1. Use Right Alt and Ctrl to Inc/Dec tag. In combination with nextprevtag patch.
 2. Use Right Shift directly as Alt|Tab key combination. Once click tag switch.
-3. Left Ctrl for dropdown terminal.
+3. Left Ctrl for wor scratchpad terminal.
 4. Left Shift for cycling through windows in current tag.
 
 ###Smart Key(s)
 
 With xcape mentioned above, we can go far with shortcuts. However, we can go even further. We can create a context aware smart key. In my case, the Windows key, that is Super.
 
-Start with xcape and bind a free key to an unused dwm key combo. In dwm, map the combo to run a script of your choice. In my setup, look at the `smart-prefix` script. So, far we can run a script with a single command.
+Start with xcape and bind a free key to an unused dwm key combo. In dwm, map the combo to run a script of your choice. In my setup, look at the `smart-prefix` script. So, far we can run a script with a single key stroke.
 
 Now, fill the script with commands that run based on the current active window. Simple matter of using xdotool to get the title and from there you can have a truly overloaded context aware key.
 

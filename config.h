@@ -31,6 +31,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 0,       0,           -1 },
+	{ "URxvt",    NULL,       "scratchpad",       0,       1,           -1 }, // for wor terminal
 };
 
 /* layout(s) */
@@ -68,6 +69,8 @@ static const char *utermcmd[]  = { "urxvtc", NULL };
 static const char *ffcmd[]  = { "firefox", NULL };
 // dropdown terminal with tmux - https://github.com/noctuid/tdrop
 static const char *termdropcmd[]  = { "tdrop", "-a", "-s", "dropdown", "urxvt", NULL };
+// custom scratchpad with urxvt and xdotool
+static const char *worspcmd[]  = { "wor-sp", NULL };
 // context aware smart prefix
 static const char *spcmd[]  = { "smart-prefix", NULL };
 
@@ -84,6 +87,8 @@ static Key keys[] = {
         { MODKEY|ShiftMask,             XK_s,      spawn,          {.v = spcmd } },
 	// drop down terminal
 	{ MODKEY,             		XK_o,      spawn,          {.v = termdropcmd } },
+	// wor terminal
+	{ MODKEY|ShiftMask,       	XK_o,      spawn,          {.v = worspcmd } },
 	// move to adjacent tags
 	{ MODKEY,                       XK_Right,  view_adjacent,  { .i = +1 } },
 	{ MODKEY,                       XK_Left,   view_adjacent,  { .i = -1 } },

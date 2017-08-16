@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Shell
+
+NAME="scratchpad"
+
+# autodecide command
+windowthere=$(xdotool search --name $NAME)
+windowvisible=$(xdotool search --onlyvisible --name $NAME)
+
+if [[ "$windowthere" == "" ]]; then
+  # window is not there
+  CMD=""
+elif [[ "$windowvisible" == "" ]]; then
+  CMD="on"
+else
+  CMD="off"
+fi
+
+if [[ "$CMD" == "" ]]; then
+  # CREATE
+  coproc urxvtc -title $NAME
+  CMD="on"
+fi
+
+# ON/OFF
+if [[ "$CMD" == "on" ]]; then
+  xdotool search --name $NAME windowmap
+  xdotool search --name $NAME windowsize 50% 30% windowmove 850 700
+elif [[ "$CMD" == "off" ]]; then
+  xdotool search --name $NAME windowunmap
+fi
+
