@@ -1,0 +1,4 @@
+#!/bin/bash
+
+notify-send "Time" "$(date)"
+notify-send "Battery" "$(acpi)"

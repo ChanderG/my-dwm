@@ -73,6 +73,8 @@ static const char *termdropcmd[]  = { "tdrop", "-a", "-s", "dropdown", "urxvt", 
 static const char *worspcmd[]  = { "wor-sp", NULL };
 // context aware smart prefix
 static const char *spcmd[]  = { "smart-prefix", NULL };
+// custom status display command
+static const char *statuscmd[]  = { "mouse-status", NULL };
 
 
 static Key keys[] = {
@@ -89,6 +91,8 @@ static Key keys[] = {
 	{ MODKEY,             		XK_o,      spawn,          {.v = termdropcmd } },
 	// wor terminal
 	{ MODKEY|ShiftMask,       	XK_o,      spawn,          {.v = worspcmd } },
+	// status command
+	{ MODKEY,             		XK_s,      spawn,          {.v = statuscmd } },
 	// move to adjacent tags
 	{ MODKEY,                       XK_Right,  view_adjacent,  { .i = +1 } },
 	{ MODKEY,                       XK_Left,   view_adjacent,  { .i = -1 } },
@@ -137,7 +141,7 @@ static Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
+	{ ClkStatusText,        0,              Button2,        spawn,          {.v = utermcmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
