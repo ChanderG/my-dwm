@@ -47,6 +47,18 @@ To achieve true power on windows, I tried taking a peek into tdrop mentioned abo
 
 For an example, look at the included wor-sp script, Word of Recall Scratchpad. This brings up or dismisses a terminal, the same terminal, floating near the bottom right corner of the screen every time it is run. The idea can be trivially replicated for any class or type of window or specfic instances.
 
+This is basically suited for long running special programs that are needed. See the below section Summon and Dismiss for other programs.
+
+###Summon and Dismiss
+
+Ever tired of some windows that you don't need right now? Either it is taking a full tile in your tag or you put it into a seperate tag where it is cluttering and wasting space.
+
+Now with the Summon and Dismiss, you can send windows into the void and summon them when you need it again. Brought to you by the power of xdotool and dmenu.
+
+Look at the summon and dismiss scripts included. Either bind them to some keys or call them directly from dmenu.
+
+Dismiss waits for a cursor click on a window. Any window you click will be dismissed into the void. But don't worry, it can be retrieved safetly. You may dismiss any number of windows without care or concern. When you are ready to bring a window back, call the Summon script. Dmenu opens up with a list of windows that you have dismissed. Select the window you want and it's back in action.
+
 ###Modifiers as independent keys
 
 Also using [xcape](https://github.com/alols/xcape) to overload modifiers.

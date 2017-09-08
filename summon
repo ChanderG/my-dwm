@@ -1,0 +1,4 @@
+#!/bin/bash
+WINDOWNAME=$(cat ~/windowlist | dmenu -l 10)
+sed -i "/^$WINDOWNAME$/d" ~/windowlist
+xdotool search --name "$WINDOWNAME" windowmap
