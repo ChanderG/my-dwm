@@ -118,6 +118,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	// original series
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -125,12 +126,27 @@ static Key keys[] = {
 	TAGKEYS(                        XK_5,                      4)
 	TAGKEYS(                        XK_6,                      5)
 	TAGKEYS(                        XK_7,                      6)
+	TAGKEYS(                        XK_8,                      7)
+	TAGKEYS(                        XK_9,                      8)
+	// easy access of the middle series
 	TAGKEYS(                        XK_q,                      3)
 	TAGKEYS(                        XK_w,                      4)
 	TAGKEYS(                        XK_e,                      5)
 	TAGKEYS(                        XK_r,                      6)
-	TAGKEYS(                        XK_8,                      7)
-	TAGKEYS(                        XK_9,                      8)
+	// inverted number row access series
+	TAGKEYS(                        XK_exclam,                 0)
+	TAGKEYS(                        XK_at, 	                   1)
+	TAGKEYS(                        XK_numbersign,             2)
+	TAGKEYS(                        XK_dollar,                 3)
+	TAGKEYS(                        XK_percent,                4)
+	TAGKEYS(                        XK_asciicircum,            5)
+	TAGKEYS(                        XK_ampersand,              6)
+	TAGKEYS(                        XK_asterisk,               7)
+	TAGKEYS(                        XK_parenleft,              8)
+	// inverted access -> all)
+	{ MODKEY,                       XK_parenright,    view,           {.ui = ~0 } },
+	{ MODKEY|ShiftMask,             XK_parenright,    tag,            {.ui = ~0 } },
+	// done
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
