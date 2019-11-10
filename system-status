@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo -e "Time: $(date)\nBattery: $(acpi)" | dmenu -l 3 -p "Status"

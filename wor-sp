@@ -19,7 +19,8 @@ fi
 
 if [[ "$CMD" == "" ]]; then
   # CREATE
-  coproc urxvtc -title $NAME
+  # coproc urxvtc -title $NAME
+  coproc st -t $NAME
   CMD="on"
 fi
 

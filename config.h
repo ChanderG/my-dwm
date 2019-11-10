@@ -16,7 +16,7 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
-static const unsigned int gappx = 6; /* gap pixel between windows */ 
+static const unsigned int gappx = 24; /* gap pixel between windows */ 
 static unsigned int baralpha        = 0xBB;
 static unsigned int borderalpha     = OPAQUE;
 
@@ -32,6 +32,7 @@ static const Rule rules[] = {
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 0,       0,           -1 },
 	{ "URxvt",    NULL,       "scratchpad",       0,       1,           -1 }, // for wor terminal
+	{ "st-256color",    NULL, "scratchpad",       0,       1,           -1 }, // for wor terminal
 };
 
 /* layout(s) */
@@ -75,6 +76,8 @@ static const char *worspcmd[]  = { "wor-sp", NULL };
 static const char *spcmd[]  = { "smart-prefix", NULL };
 // custom status display command
 static const char *statuscmd[]  = { "mouse-status", NULL };
+// lock only keyboard
+static const char *screenlockcmd[]  = { "rlock", "-k", NULL };
 
 
 static Key keys[] = {
@@ -157,7 +160,7 @@ static Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = utermcmd } },
+	{ ClkStatusText,        0,              Button2,        spawn,          {.v = screenlockcmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
