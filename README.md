@@ -83,10 +83,6 @@ In my setup, for instance, if the current window is a tmux session, the Super ke
 
 [Uselessgap](http://dwm.suckless.org/patches/uselessgap) is a dwm patch to insert gaps between windows in tiling mode alone. Currently included.
 
-### Top bar transparency
-
-Using [Alpha](http://dwm.suckless.org/patches/alpha) is a dwm patch to bring in transparency to the top bar. Be warned, this will not work without a separate compositing manager running. I use xcompmgr.
-
 ### Per Tag
 
 Have separate layout per tag.
@@ -94,7 +90,6 @@ Have separate layout per tag.
 ### List of Patches
 All included in the source. Listing here for future upgrade requirements.
 
-+ uselessgap - http://dwm.suckless.org/patches/uselessgap
 + alpha - http://dwm.suckless.org/patches/alpha
 + pertag - http://dwm.suckless.org/patches/pertag
 + nextprevtag - http://dwm.suckless.org/patches/nextprevtag

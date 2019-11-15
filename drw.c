@@ -61,7 +61,7 @@ utf8decode(const char *c, long *u, size_t clen)
 }
 
 Drw *
-drw_create(Display *dpy, int screen, Window root, unsigned int w, unsigned int h, Visual *visual, unsigned int depth, Colormap cmap)
+drw_create(Display *dpy, int screen, Window root, unsigned int w, unsigned int h)
 {
 	Drw *drw;
 
@@ -71,11 +71,8 @@ drw_create(Display *dpy, int screen, Window root, unsigned int w, unsigned int h
 	drw->root = root;
 	drw->w = w;
 	drw->h = h;
-	drw->visual = visual;
-	drw->depth = depth;
-	drw->cmap = cmap;
-	drw->drawable = XCreatePixmap(dpy, root, w, h, depth);
-	drw->gc = XCreateGC(dpy, drw->drawable, 0, NULL);
+	drw->drawable = XCreatePixmap(dpy, root, w, h, DefaultDepth(dpy, screen));
+	drw->gc = XCreateGC(dpy, root, 0, NULL);
 	drw->fontcount = 0;
 	XSetLineAttributes(dpy, drw->gc, 1, LineSolid, CapButt, JoinMiter);
 
@@ -89,7 +86,7 @@ drw_resize(Drw *drw, unsigned int w, unsigned int h)
 	drw->h = h;
 	if (drw->drawable)
 		XFreePixmap(drw->dpy, drw->drawable);
-	drw->drawable = XCreatePixmap(drw->dpy, drw->root, w, h, drw->depth);
+	drw->drawable = XCreatePixmap(drw->dpy, drw->root, w, h, DefaultDepth(drw->dpy, drw->screen));
 }
 
 void
@@ -183,15 +180,16 @@ drw_font_free(Fnt *font)
 }
 
 Clr *
-drw_clr_create(Drw *drw, const char *clrname, unsigned int alpha)
+drw_clr_create(Drw *drw, const char *clrname)
 {
 	Clr *clr;
 
 	clr = ecalloc(1, sizeof(Clr));
-	if (!XftColorAllocName(drw->dpy, drw->visual, drw->cmap,
+	if (!XftColorAllocName(drw->dpy, DefaultVisual(drw->dpy, drw->screen),
+	                       DefaultColormap(drw->dpy, drw->screen),
 	                       clrname, &clr->rgb))
 		die("error, cannot allocate color '%s'\n", clrname);
-	clr->pix = (clr->rgb.pixel & 0x00ffffffU) | (alpha << 24);
+	clr->pix = clr->rgb.pixel;
 
 	return clr;
 }
@@ -247,7 +245,9 @@ drw_text(Drw *drw, int x, int y, unsigned int w, unsigned int h, const char *tex
 		XSetForeground(drw->dpy, drw->gc, invert ?
 		               drw->scheme->fg->pix : drw->scheme->bg->pix);
 		XFillRectangle(drw->dpy, drw->drawable, drw->gc, x, y, w, h);
-		d = XftDrawCreate(drw->dpy, drw->drawable, drw->visual, drw->cmap);
+		d = XftDrawCreate(drw->dpy, drw->drawable,
+		                  DefaultVisual(drw->dpy, drw->screen),
+		                  DefaultColormap(drw->dpy, drw->screen));
 	}
 
 	curfont = drw->fonts[0];

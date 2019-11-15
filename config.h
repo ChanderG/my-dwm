@@ -16,9 +16,7 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
-static const unsigned int gappx = 24; /* gap pixel between windows */ 
-static unsigned int baralpha        = 0xBB;
-static unsigned int borderalpha     = OPAQUE;
+static const unsigned int gappx = 24; /* gap pixel between windows */
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4q", "5w", "6e", "7r", "o", "m" };
