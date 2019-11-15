@@ -2,7 +2,9 @@
 
 [dwm](http://dwm.suckless.org/) aka dynamic window manager is a tiling window manager. It does get some time to get used to. It is fully customizable and here are my tweaks.
 
-Vendoring dwm for mu ease of use, as it is quite stable anyway. Currently on version 6.1. 6.1 is dependent on dmenu 4.6, meaning you need to upgrade that as well. May vendor dmenu into this repo as well, depending on need.
+Vendoring dwm for my ease of use, as it is quite stable anyway. Started out with version 6.1. 6.1 is dependent on dmenu 4.6, meaning you need to upgrade that as well.
+
+Have cherry-picked a bunch of commits between 6.1 and 6.2, to counter a bug that I was facing. So the code is now in a wierd fork of the original with patches.
 
 ### How to tweak?
 
