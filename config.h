@@ -65,8 +65,10 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *roficmd[]  = { "my-rofi", NULL };
 
+// st
+static const char *termcmd[]  = { "st", NULL };
 // urxvt
 static const char *utermcmd[]  = { "urxvtc", NULL };
 // firefox
@@ -78,27 +80,32 @@ static const char *worspcmd[]  = { "wor-sp", NULL };
 // context aware smart prefix
 static const char *spcmd[]  = { "smart-prefix", NULL };
 // custom status display command
-static const char *statuscmd[]  = { "mouse-status", NULL };
+static const char *statuscmd[]  = { "system-status", NULL };
 // lock only keyboard
 static const char *screenlockcmd[]  = { "rlock", "-k", NULL };
+// custom status display command
+static const char *keybdcmd[]  = { "keybd-command", NULL };
 
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = roficmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	// firefox
-        { MODKEY|ShiftMask,             XK_f,      spawn,          {.v = ffcmd } },
+	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = ffcmd } },
 	// urxvt
-        { MODKEY|ShiftMask,             XK_u,      spawn,          {.v = utermcmd } },
+	{ MODKEY|ShiftMask,             XK_u,      spawn,          {.v = utermcmd } },
 	// tmux prefix manager
-        { MODKEY|ShiftMask,             XK_s,      spawn,          {.v = spcmd } },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = spcmd } },
 	// drop down terminal
-	{ MODKEY,             		XK_o,      spawn,          {.v = termdropcmd } },
+	{ MODKEY,                       XK_o,      spawn,          {.v = termdropcmd } },
 	// wor terminal
-	{ MODKEY|ShiftMask,       	XK_o,      spawn,          {.v = worspcmd } },
+	{ MODKEY|ShiftMask,             XK_o,      spawn,          {.v = worspcmd } },
 	// status command
-	{ MODKEY,             		XK_s,      spawn,          {.v = statuscmd } },
+	{ MODKEY,                       XK_s,      spawn,          {.v = statuscmd } },
+	// toggle number row
+	{ MODKEY|ShiftMask,             XK_k,      spawn,          {.v = keybdcmd } },
 	// move to adjacent tags
 	{ MODKEY,                       XK_Right,  view_adjacent,  { .i = +1 } },
 	{ MODKEY,                       XK_Left,   view_adjacent,  { .i = -1 } },

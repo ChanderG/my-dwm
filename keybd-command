@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ -f ~/.keybd_toggled ]; then
+	# set it to normal
+	setxkbmap -layout us
+	rm ~/.keybd_toggled
+	xsetroot -name " Num row mode "
+else
+	xmodmap ~/Customization/dotfiles/.Xmodmap
+	touch ~/.keybd_toggled
+	xsetroot -name " Toggled num row mode "
+fi
