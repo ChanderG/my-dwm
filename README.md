@@ -85,6 +85,11 @@ In my setup, for instance, if the current window is a tmux session, the Super ke
 
 [Uselessgap](http://dwm.suckless.org/patches/uselessgap) is a dwm patch to insert gaps between windows in tiling mode alone. Currently included.
 
+### Bar Padding
+
+Useless gaps, this time for the top bar!!!
+Included in.
+
 ### Per Tag
 
 Have separate layout per tag.
