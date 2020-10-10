@@ -2,7 +2,7 @@
 
 /* appearance */
 static const char *fonts[] = {
-	"monospace:size=16"
+	"Fantasque Sans Mono:pixelsize=25"
 };
 static const char dmenufont[]       = "monospace:size=16";
 static const char normbordercolor[] = "#444444";
@@ -26,7 +26,8 @@ static const char *colors[][3]      = {
 static const unsigned int gappx = 24; /* gap pixel between windows */
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4q", "5w", "6e", "7r", "o", "m" };
+/* static const char *tags[] = { "1", "2", "3", "4q", "5w", "6e", "7r", "o", "m" }; */
+static const char *tags[] = { "१", "२", "३", "४", "५", "६", "७", "८", "९" };
 
 static const Rule rules[] = {
 	/* xprop(1):
