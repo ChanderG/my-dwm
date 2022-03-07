@@ -95,8 +95,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = roficmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	// firefox
-	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = ffcmd } },
+	// toggle full screen
+	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
 	// urxvt
 	{ MODKEY|ShiftMask,             XK_u,      spawn,          {.v = utermcmd } },
 	// tmux prefix manager

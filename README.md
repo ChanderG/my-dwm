@@ -100,6 +100,7 @@ All included in the source. Listing here for future upgrade requirements.
 + alpha - http://dwm.suckless.org/patches/alpha
 + pertag - http://dwm.suckless.org/patches/pertag
 + nextprevtag - http://dwm.suckless.org/patches/nextprevtag
++ actualfullscreen - https://dwm.suckless.org/patches/actualfullscreen
 
 ### See also
 My original [source](http://holymonkey.com/dwm-with-gnome-guide.html) of the gnome-panel idea.
